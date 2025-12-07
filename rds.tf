@@ -10,8 +10,8 @@ resource "aws_db_instance" "rox_api_mysql" {
   instance_class          = "db.m5.large"
   allocated_storage       = 50 # Storage in GB
   db_name                 = "rox_api_database"
-  username                = "admin"
-  password                = "rox_api_password"
+  username                = ""
+  password                = ""
   parameter_group_name    = aws_db_parameter_group.rox_api_mysql_84.name
   allow_major_version_upgrade = true
   apply_immediately = true
@@ -61,8 +61,8 @@ resource "aws_db_instance" "mysql_instance_policy_manager" {
   engine_version          = "8.4"
   instance_class          = "db.t4g.medium"
   db_name                 = "policy_manager_database"
-  username                = "admin"
-  password                = "policy_manager_password"
+  username                = ""
+  password                = ""
   parameter_group_name    = aws_db_parameter_group.policy_manager_mysql_84.name
   allocated_storage       = 50
   vpc_security_group_ids  = [aws_security_group.mysql_sg_policy_manager.id]
